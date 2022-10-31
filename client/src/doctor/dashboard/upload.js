@@ -90,7 +90,7 @@ const Upload = (props) => {
               <br />
               {/* UPLOAD IMAGE BUTTON */}
               <Button variant="contained" onClick={handleUpload}>
-                Upload
+                Subir
               </Button>
             </>
           );

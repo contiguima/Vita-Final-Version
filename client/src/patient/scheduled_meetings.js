@@ -27,9 +27,9 @@ const Patient_Scheduled_Meetings = () => {
   return (
     <>
       <Navbar />
-      <Container maxWidth="lg" sx={container}>
+      <Container maxWidth="100%" sx={container}>
         <Typography align="center" variant="h4" sx={typography}>
-          Your Scheduled Appointments
+          Turnos Agendados
         </Typography>
         <List>
           {meetings.map((meeting) => {
@@ -40,7 +40,7 @@ const Patient_Scheduled_Meetings = () => {
                     <Grid item xs={12} sm={9}>
                       <Typography>
                         Meeting ID: {meeting.meetingID} <br />
-                        Scheduled At:{" "}
+                        Fecha:{" "}
                         {new Date(
                           meeting.scheduledAt.seconds * 1000
                         ).toLocaleDateString("en-US")}
@@ -62,7 +62,7 @@ const Patient_Scheduled_Meetings = () => {
                         target="_blank"
                         href={`/patient/room/${meeting.meetingID}`}
                       >
-                        Join
+                        Unirse
                       </Button>
                     </Grid>
                   </Grid>

@@ -4,7 +4,7 @@ const theme = createTheme();
 
 export const container = {
   mt: "10vh",
-  ml: "5vw",
+  ml: "4vw",
   minHeight: "100vh",
   background: "linear-gradient(135deg, #dff6fe 30%, #0095de 90%)",
   // backgroundImage: `url('../images/blue2.jpg')`,
@@ -25,7 +25,7 @@ export const container = {
 export const paper = {
   p: 2,
   display: "flex",
-  // flexDirection: "column",
+  flexDirection: "column",
 };
 
 export const transparentPaper = {

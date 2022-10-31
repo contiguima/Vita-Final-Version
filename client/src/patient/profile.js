@@ -22,7 +22,7 @@ const Patient_Profile = () => {
   return (
     <>
       <Navbar />
-      <Container maxWidth="lg" sx={container}>
+      <Container maxWidth="false" sx={container}>
         {patients.map((patient) => {
           if (patient.uid === currentUser.uid)
             return (
@@ -42,29 +42,27 @@ const Patient_Profile = () => {
                 {/* PATIENT'S PROFILE */}
                 <Grid item xs={12} md={8} lg={9}>
                   <Paper sx={paper}>
-                    <Title>Profile</Title>
+                    <Title>Perfil</Title>
                     <Typography sx={{ fontStyle: "italic" }}>
-                      (You can update these details by going to the dashboard
-                      tab)
+                      (Podes actualizar estos datos en la sección Dashboard)
                     </Typography>
-                    <Typography>Name: {patient.name}</Typography>
-                    <Typography>Age: {patient.age}</Typography>
-                    <Typography>Gender: {patient.gender}</Typography>
-                    <Typography>Blood Group: {patient.bloodGroup}</Typography>
+                    <Typography>Nombre completo: {patient.name}</Typography>
+                    <Typography>Edad: {patient.age}</Typography>
+                    <Typography>Género: {patient.gender}</Typography>
+                    <Typography>Grupo sanguíneo: {patient.bloodGroup}</Typography>
                     <Typography>
-                      Address: {patient.address1}, {patient.address2},{" "}
+                      Dirección: {patient.address1}, {patient.address2},{" "}
                       {patient.city}, {patient.state}, {patient.country}
                     </Typography>
-                    <Typography>Pincode: {patient.pincode}</Typography>
+                    <Typography>Código postal: {patient.pincode}</Typography>
                     <Typography variant="subtitle2">
-                      Last updated at:{" "}
+                      Actualizado por última vez:{" "}
                       {new Date(
                         patient.updatedAt.seconds * 1000
                       ).toLocaleDateString("en-US")}
                       , at{" "}
                       {new Date(patient.updatedAt.seconds * 1000).getHours()}:
-                      {new Date(patient.updatedAt.seconds * 1000).getMinutes()}{" "}
-                      hrs
+                      {new Date(patient.updatedAt.seconds * 1000).getMinutes()}0hrs
                     </Typography>
                   </Paper>
                 </Grid>

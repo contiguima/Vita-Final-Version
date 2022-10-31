@@ -144,7 +144,7 @@ const Doctor_Signin = () => {
                 <Button
                   variant="outline"
                   fullWidth
-                  // variant="contained"
+                  variant="contained"
                   sx={{ mt: 1, mb: 2 }}
                   startIcon={<GoogleIcon />}
                   onClick={() => signInWithGoogle()}

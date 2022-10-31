@@ -56,7 +56,7 @@ const Navbar = () => {
       <CssBaseline />
 
       {/* APPBAR */}
-      <AppBar position="fixed" open={open} sx={{ backgroundColor: "#39ac73" }}>
+      <AppBar position="fixed" open={open} sx={{ backgroundColor: "#3e8fda" }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -71,7 +71,7 @@ const Navbar = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Medicare (Doctors)
+            Vita (Doctores)
           </Typography>
         </Toolbar>
       </AppBar>
@@ -103,72 +103,72 @@ const Navbar = () => {
 
           {/* PROFILE */}
           <ListItem button component="a" href="/doctor/profile">
-            <Tooltip title="Profile" placement="right">
+            <Tooltip title="Perfil" placement="right">
               <ListItemIcon>
                 <PersonIcon />
               </ListItemIcon>
             </Tooltip>
-            <ListItemText>Profile</ListItemText>
+            <ListItemText>Perfil</ListItemText>
           </ListItem>
 
           {/* APPOINTMENTS */}
           <ListItem button component="a" href="/doctor/appointments">
-            <Tooltip title="Appointments" placement="right">
+            <Tooltip title="Turnos" placement="right">
               <ListItemIcon>
                 <AssignmentIcon />
               </ListItemIcon>
             </Tooltip>
-            <ListItemText>Appointments</ListItemText>
+            <ListItemText>Turnos</ListItemText>
           </ListItem>
 
           {/* YOUR PATIENTS */}
           <ListItem button component="a" href="/doctor/your_patients">
-            <Tooltip title="Your Patients" placement="right">
+            <Tooltip title="Tus Pacientes" placement="right">
               <ListItemIcon>
                 <PeopleIcon />
               </ListItemIcon>
             </Tooltip>
-            <ListItemText>Your Patients</ListItemText>
+            <ListItemText>Tus Pacientes</ListItemText>
           </ListItem>
 
           {/* NOTIFICATIONS */}
           <ListItem button component="a" href="/doctor/notifications">
-            <Tooltip title="Notifications" placement="right">
+            <Tooltip title="Notificaciones" placement="right">
               <ListItemIcon>
                 <Notifications />
               </ListItemIcon>
             </Tooltip>
-            <ListItemText>Notifications</ListItemText>
+            <ListItemText>Notificaciones</ListItemText>
           </ListItem>
 
           {/* SCHEDULED MEETINGS */}
           <ListItem button component="a" href="/doctor/scheduled_meetings">
-            <Tooltip title="Scheduled Meetings" placement="right">
+            <Tooltip title="Turnos agendados" placement="right">
               <ListItemIcon>
                 <VideocamIcon />
               </ListItemIcon>
             </Tooltip>
-            <ListItemText>Scheduled Meetings</ListItemText>
+            <ListItemText>Turnos Agendados</ListItemText>
           </ListItem>
 
           {/* LATEST UPDATES */}
           <ListItem button component="a" href="/doctor/latest_updates">
-            <Tooltip title="Latest Updates" placement="right">
+            <Tooltip title="Últimas novedades" placement="right">
               <ListItemIcon>
                 <NewspaperIcon />
               </ListItemIcon>
             </Tooltip>
-            <ListItemText>Latest Updates</ListItemText>
+            <ListItemText>Últimas novedades</ListItemText>
           </ListItem>
 
           {/* SIGN OUT */}
           <ListItem button onClick={handleSignout}>
-            <Tooltip title="Sign Out" placement="right">
+            <Tooltip title="Cerrar sesión" placement="right">
               <ListItemIcon>
                 <LogoutIcon />
               </ListItemIcon>
             </Tooltip>
-            <ListItemText>Sign Out</ListItemText>
+            <ListItemText>Cerrar sesión</ListItemText>
           </ListItem>
         </List>
       </Drawer>

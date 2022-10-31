@@ -62,7 +62,7 @@ const Age = (props) => {
                     required
                     id="Age"
                     name="Age"
-                    label="Age"
+                    label="Edad"
                     fullWidth
                     size="small"
                     onChange={(e) => setAge(e.target.value)}
@@ -72,8 +72,8 @@ const Age = (props) => {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose}>Cancel</Button>
-            <Button type="submit">Edit</Button>
+            <Button onClick={handleClose}>Cancelar</Button>
+            <Button type="submit">Editar</Button>
           </DialogActions>
         </form>
       </Dialog>

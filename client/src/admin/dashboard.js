@@ -17,13 +17,13 @@ const Admin_Dashboard = () => {
           <Grid item xs={12}>
             <Paper sx={paper}>
               <Typography variant="h6">
-                <b>Your job is to: </b>
+                <b>Tu trabajo es: </b>
                 <br />
-                Verify doctors by visiting the National Medical Council Page{" "}
+                Verificar los datos de los doctores{" "}
                 <br />
-                Keep a check on patients <br />
-                Create new posts/updates for all users <br />
-                Read feedbacks and respond to them!
+                Llevar un control de los pacientes <br />
+                Crear noticias para la comunidad <br />
+               
               </Typography>
             </Paper>
           </Grid>

@@ -29,7 +29,7 @@ const Ratings = (props) => {
 
   return (
     <Paper sx={paper}>
-      <Title>Average Rating Given by Patients</Title>
+      <Title>Media de puntaje dado por pacientes</Title>
       <Rating
         name="half-rating-read"
         defaultValue={rating}

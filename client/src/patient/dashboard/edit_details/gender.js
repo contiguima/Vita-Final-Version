@@ -74,9 +74,9 @@ const Gender = (props) => {
                     size="small"
                     onChange={handleChangeGender}
                   >
-                    <MenuItem value="Female">Femenino</MenuItem>
-                    <MenuItem value="Male">Masculino</MenuItem>
-                    <MenuItem value="Other">Otro</MenuItem>
+                    <MenuItem value="Femenino">Femenino</MenuItem>
+                    <MenuItem value="Masculino">Masculino</MenuItem>
+                    <MenuItem value="Otro">Otro</MenuItem>
                   </TextField>
                 </Grid>
               </Grid>

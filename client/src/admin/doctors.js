@@ -57,7 +57,7 @@ const Doctors = () => {
           {/* UNVERIFIED DOCTORS */}
           <Grid item xs={12}>
             <Typography variant="h5" sx={typography}>
-              Unverified Doctors
+              Doctores sin verificar
             </Typography>
             <Paper sx={paper}>
               <List>
@@ -68,19 +68,19 @@ const Doctors = () => {
                         <Grid container>
                           <Grid item xs={12} sm={9}>
                             <Typography>
-                              Name: {doctor.name} <br />
-                              Age: {doctor.age} years <br />
-                              Gender: {doctor.gender} <br />
-                              Medical Speciality: {
+                              Nombre: {doctor.name} <br />
+                              Edad: {doctor.age} años <br />
+                              Genero: {doctor.gender} <br />
+                              Especialidad médica: {
                                 doctor.medicalSpeciality
                               }{" "}
                               <br />
-                              Degree: {doctor.degree} <br />
-                              Experience: {doctor.experience} years <br />
-                              Reg. No.: {doctor.regNumber} <br />
-                              State Medical Council:{" "}
+                              Título: {doctor.degree} <br />
+                              Honorarios: {doctor.experience} pesos <br />
+                              Matricula.: {doctor.regNumber} <br />
+                              Lugar donde saco la matricula:{" "}
                               {doctor.stateMedicalCouncil} <br />
-                              Address: {doctor.address1}, {doctor.address2},{" "}
+                              Dirección: {doctor.address1}, {doctor.address2},{" "}
                               {doctor.city}, {doctor.state}, {doctor.country},{" "}
                               {doctor.pincode}
                             </Typography>
@@ -90,7 +90,7 @@ const Doctors = () => {
                               variant="contained"
                               onClick={() => handleVerify(doctor.uid)}
                             >
-                              Verify
+                              Verificar
                             </Button>
                           </Grid>
                         </Grid>
@@ -104,7 +104,7 @@ const Doctors = () => {
           {/* VERIFIED DOCTORS */}
           <Grid item xs={12}>
             <Typography variant="h5" sx={typography}>
-              Verified Doctors
+              Doctores verificados
             </Typography>
             <Paper sx={paper}>
               <List>
@@ -115,19 +115,19 @@ const Doctors = () => {
                         <Grid container>
                           <Grid item xs={12} sm={9}>
                             <Typography>
-                              Name: {doctor.name} <br />
-                              Age: {doctor.age} years <br />
-                              Gender: {doctor.gender} <br />
-                              Medical Speciality: {
+                              Nombre: {doctor.name} <br />
+                              Edad: {doctor.age} años <br />
+                              Genero: {doctor.gender} <br />
+                              Especialidad médica: {
                                 doctor.medicalSpeciality
                               }{" "}
                               <br />
-                              Degree: {doctor.degree} <br />
-                              Experience: {doctor.experience} years <br />
-                              Reg. No.: {doctor.regNumber} <br />
-                              State Medical Council:{" "}
+                              Títulos: {doctor.degree} <br />
+                              Honorarios: {doctor.experience} pesos argentinos <br />
+                              Numero de matricula: {doctor.regNumber} <br />
+                              Lugar donde saco la matricula:{" "}
                               {doctor.stateMedicalCouncil} <br />
-                              Address: {doctor.address1}, {doctor.address2},{" "}
+                              Dirección: {doctor.address1}, {doctor.address2},{" "}
                               {doctor.city}, {doctor.state}, {doctor.country},{" "}
                               {doctor.pincode}
                             </Typography>
@@ -137,7 +137,7 @@ const Doctors = () => {
                               variant="contained"
                               onClick={() => handleUnverify(doctor.uid)}
                             >
-                              Unverify
+                              Quitar 
                             </Button>
                           </Grid>
                         </Grid>

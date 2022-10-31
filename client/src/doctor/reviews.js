@@ -19,7 +19,7 @@ const Reviews = (props) => {
 
   return (
     <Paper sx={paper}>
-      <Title>Patient Reviews</Title>
+      <Title>Reviews de pacientes</Title>
       <List>
         {feedbacks.map((feedback) => {
           return (

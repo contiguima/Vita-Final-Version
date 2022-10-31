@@ -51,7 +51,7 @@ const Degree = (props) => {
         onClose={handleClose}
         PaperProps={{ sx: { position: "fixed", top: 0, m: 0 } }}
       >
-        <DialogTitle>Edit Degree</DialogTitle>
+        <DialogTitle>Editar Título</DialogTitle>
         <form onSubmit={handleSubmit}>
           <DialogContent>
             <DialogContentText ref={descriptionElementRef} tabIndex={-1}>
@@ -62,7 +62,7 @@ const Degree = (props) => {
                     required
                     id="Degree"
                     name="Degree"
-                    label="Degree"
+                    label="Título"
                     fullWidth
                     size="small"
                     onChange={(e) => setDegree(e.target.value)}
@@ -72,8 +72,8 @@ const Degree = (props) => {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose}>Cancel</Button>
-            <Button type="submit">Edit</Button>
+            <Button onClick={handleClose}>Cancelar</Button>
+            <Button type="submit">Editar</Button>
           </DialogActions>
         </form>
       </Dialog>

@@ -13,7 +13,7 @@ const Doctor_Dashboard = () => {
   return (
     <>
       <Navbar />
-      <Container maxWidth="lg" sx={container}>
+      <Container maxWidth="100%" sx={container}>
         <Grid container spacing={3}>
           {/* UPLOAD PROFILE IMAGE */}
           <Grid item xs={12} md={4} lg={3}>

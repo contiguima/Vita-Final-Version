@@ -7,7 +7,7 @@ export const container = {
   ml: "5vw",
   minHeight: "100vh",
   background: "linear-gradient(135deg, #dff6fe 30%, #0095de 90%)",
-  backgroundImage: `url('../images/blue2.jpg')`,
+  // backgroundImage: `url('../images/blue2.jpg')`,
   backgroundPosition: "center",
   backgroundRepeat: "repeat-x",
   backgroundSize: "cover",

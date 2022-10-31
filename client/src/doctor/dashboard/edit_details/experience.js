@@ -51,7 +51,7 @@ const Experience = (props) => {
         onClose={handleClose}
         PaperProps={{ sx: { position: "fixed", top: 0, m: 0 } }}
       >
-        <DialogTitle>Edit Experience</DialogTitle>
+        <DialogTitle>Editar honorarios</DialogTitle>
         <form onSubmit={handleSubmit}>
           <DialogContent>
             <DialogContentText ref={descriptionElementRef} tabIndex={-1}>
@@ -62,7 +62,7 @@ const Experience = (props) => {
                     required
                     id="Experience"
                     name="Experience"
-                    label="Experience"
+                    label="Honorarios"
                     fullWidth
                     size="small"
                     onChange={(e) => setExperience(e.target.value)}
@@ -72,8 +72,8 @@ const Experience = (props) => {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose}>Cancel</Button>
-            <Button type="submit">Edit</Button>
+            <Button onClick={handleClose}>Cancelar</Button>
+            <Button type="submit">Editar</Button>
           </DialogActions>
         </form>
       </Dialog>

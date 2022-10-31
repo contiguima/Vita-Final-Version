@@ -166,7 +166,7 @@ const Patient_Room = (props) => {
   let audioControl;
   if (audioMuted) {
     audioControl = (
-      <Tooltip title="Microphone" placement="top">
+      <Tooltip title="Micrófono" placement="top">
         <IconButton
           onClick={() => toggleMuteAudio()}
           style={{ color: "#ffffff" }}
@@ -177,7 +177,7 @@ const Patient_Room = (props) => {
     );
   } else {
     audioControl = (
-      <Tooltip title="Microphone" placement="top">
+      <Tooltip title="Micrófono" placement="top">
         <IconButton
           onClick={() => toggleMuteAudio()}
           style={{ color: "#ffffff" }}
@@ -191,7 +191,7 @@ const Patient_Room = (props) => {
   let videoControl;
   if (videoMuted) {
     videoControl = (
-      <Tooltip title="Camera" placement="top">
+      <Tooltip title="Cámara" placement="top">
         <IconButton
           onClick={() => toggleMuteVideo()}
           style={{ color: "#ffffff" }}
@@ -202,7 +202,7 @@ const Patient_Room = (props) => {
     );
   } else {
     videoControl = (
-      <Tooltip title="Camera" placement="top">
+      <Tooltip title="Cámara" placement="top">
         <IconButton
           onClick={() => toggleMuteVideo()}
           style={{ color: "#ffffff" }}
@@ -216,7 +216,7 @@ const Patient_Room = (props) => {
   //LEAVE MEETING
 
   const leaveMeeting = () => {
-    alert("You are leaving the meeting!");
+    alert("¡Estas abandonando la consulta!");
   };
 
   return (
@@ -236,7 +236,7 @@ const Patient_Room = (props) => {
           {/* <Participants />
           <WhiteBoard />
            */}
-          <Tooltip title="End Call" placement="top">
+          <Tooltip title="Terminar consulta" placement="top">
             <IconButton
               onClick={leaveMeeting}
               href="/patient/past_appointments"

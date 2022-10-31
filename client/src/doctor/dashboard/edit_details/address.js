@@ -61,7 +61,7 @@ const Address = (props) => {
         onClose={handleClose}
         PaperProps={{ sx: { position: "fixed", top: 0, m: 0 } }}
       >
-        <DialogTitle>Edit Address</DialogTitle>
+        <DialogTitle>Editar dirección</DialogTitle>
         <form onSubmit={handleSubmit}>
           <DialogContent>
             <DialogContentText ref={descriptionElementRef} tabIndex={-1}>
@@ -72,7 +72,7 @@ const Address = (props) => {
                     required
                     id="address1"
                     name="address1"
-                    label="Address Line 1"
+                    label="Dirección 1"
                     fullWidth
                     autoComplete="shipping address-line1"
                     size="small"
@@ -84,7 +84,7 @@ const Address = (props) => {
                     required
                     id="address2"
                     name="address2"
-                    label="Address Line 2"
+                    label="Dirección 2"
                     fullWidth
                     autoComplete="shipping address-line2"
                     size="small"
@@ -96,7 +96,7 @@ const Address = (props) => {
                     required
                     id="city"
                     name="city"
-                    label="City"
+                    label="Ciudad"
                     fullWidth
                     autoComplete="shipping address-level2"
                     size="small"
@@ -108,7 +108,7 @@ const Address = (props) => {
                     required
                     id="state"
                     name="state"
-                    label="State/Province/Region"
+                    label="Provincia"
                     fullWidth
                     size="small"
                     onChange={(e) => setState(e.target.value)}
@@ -119,7 +119,7 @@ const Address = (props) => {
                     required
                     id="zip"
                     name="zip"
-                    label="Zip / Postal code"
+                    label="Código postal"
                     fullWidth
                     autoComplete="shipping postal-code"
                     size="small"
@@ -131,7 +131,7 @@ const Address = (props) => {
                     required
                     id="country"
                     name="country"
-                    label="Country"
+                    label="País"
                     fullWidth
                     autoComplete="shipping country"
                     size="small"
@@ -142,8 +142,8 @@ const Address = (props) => {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose}>Cancel</Button>
-            <Button type="submit">Edit</Button>
+            <Button onClick={handleClose}>Cancelar</Button>
+            <Button type="submit">Editar</Button>
           </DialogActions>
         </form>
       </Dialog>

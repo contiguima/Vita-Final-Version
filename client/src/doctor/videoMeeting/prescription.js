@@ -117,7 +117,7 @@ const Prescription = (props) => {
     var i = 20;
     var j = 120;
     doc.setFontSize("15");
-    doc.addImage("/images/Medicare.png", "PNG", 5, 5, 200, 15);
+    doc.addImage("/images/logovita.jpg", "JPG", 5, 5, 20, 15);
     doc.text("Date: ", 20, 30);
     doc.text(date, 50, 30);
     doc.text("Doctor: ", 20, 40);

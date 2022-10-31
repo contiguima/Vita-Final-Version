@@ -69,7 +69,7 @@ const Navbar = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Medicare (Admin)
+            Vita (Admins)
           </Typography>
         </Toolbar>
       </AppBar>
@@ -129,35 +129,7 @@ const Navbar = () => {
             <ListItemText>Create Post</ListItemText>
           </ListItem>
 
-          {/* LATEST UPDATES */}
-          <ListItem button component="a" href="/latest_updates">
-            <Tooltip title="Latest Updates" placement="right">
-              <ListItemIcon>
-                <NewspaperIcon />
-              </ListItemIcon>
-            </Tooltip>
-            <ListItemText>Latest Updates</ListItemText>
-          </ListItem>
-
-          {/* NOTIFICATIONS */}
-          <ListItem button component="a" href="/notifications">
-            <Tooltip title="Notifications" placement="right">
-              <ListItemIcon>
-                <NotificationsIcon />
-              </ListItemIcon>
-            </Tooltip>
-            <ListItemText>Notifications</ListItemText>
-          </ListItem>
-
-          {/* READ FEEDBACKS */}
-          <ListItem button component="a" href="/feedbacks">
-            <Tooltip title="Read Feedbacks" placement="right">
-              <ListItemIcon>
-                <EmailIcon />
-              </ListItemIcon>
-            </Tooltip>
-            <ListItemText>Read Feedbacks</ListItemText>
-          </ListItem>
+         
 
           {/* SIGN OUT */}
           <ListItem button onClick={handleSignout}>

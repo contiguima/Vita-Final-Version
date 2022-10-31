@@ -32,7 +32,7 @@ const Doctor = () => {
   return (
     <div>
       <Navbar />
-      <Container maxWidth="lg" sx={container}>
+      <Container maxWidth="false" sx={container}>
         {doctors.map((doctor) => {
           if (doctor.uid === uid)
             return (
@@ -63,28 +63,28 @@ const Doctor = () => {
                 <Grid item xs={12} md={8} lg={9}>
                   <Paper sx={paper}>
                     <>
-                      <Typography>Name: {doctor.name}</Typography>
+                      <Typography>Nombre: {doctor.name}</Typography>
 
                       <Typography>
-                        Medical Speciality: {doctor.medicalSpeciality}
+                        Especialidad médica: {doctor.medicalSpeciality}
                       </Typography>
                       <Typography>
-                        Experience: {doctor.experience} years
+                        Honorarios: {doctor.experience}$
                       </Typography>
-                      <Typography>Age: {doctor.age} years</Typography>
-                      <Typography>Gender: {doctor.gender}</Typography>
-                      <Typography>Degree: {doctor.degree}</Typography>
+                      <Typography>Edad: {doctor.age} años</Typography>
+                      <Typography>Género: {doctor.gender}</Typography>
+                      <Typography>Títulos: {doctor.degree}</Typography>
                       <Typography>
-                        Address: {doctor.address1}, {doctor.address2},{" "}
+                        Dirección del consultorio: {doctor.address1}, {doctor.address2},{" "}
                         {doctor.city}, {doctor.state}, {doctor.country},{" "}
                         {doctor.pincode}
                       </Typography>
                       <Typography>
-                        Time Slot :{" "}
+                        Horarios de atención :{" "}
                         {new Date(doctor.startTime.seconds * 1000).getHours()}:
                         {new Date(doctor.startTime.seconds * 1000).getMinutes()}
-                        0 - {new Date(doctor.endTime.seconds * 1000).getHours()}
-                        :{new Date(doctor.endTime.seconds * 1000).getMinutes()}0
+                         - {new Date(doctor.endTime.seconds * 1000).getHours()}
+                        :{new Date(doctor.endTime.seconds * 1000).getMinutes()}
                         hrs
                       </Typography>
                     </>

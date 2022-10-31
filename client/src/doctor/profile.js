@@ -22,7 +22,7 @@ const Doctor_Profile = () => {
   return (
     <>
       <Navbar />
-      <Container maxWidth="lg" sx={container}>
+      <Container maxWidth="false" sx={container}>
         {doctors.map((doctor) => {
           if (doctor.uid === currentUser.uid)
             return (
@@ -42,30 +42,29 @@ const Doctor_Profile = () => {
                 {/* DOCTOR'S PROFILE */}
                 <Grid item xs={12} md={8} lg={9}>
                   <Paper sx={paper}>
-                    <Title>Profile</Title>
+                    <Title>Perfil</Title>
                     <Typography sx={{ fontStyle: "italic" }}>
-                      (You can update these details by going to the dashboard
-                      tab)
+                      (Podes modificar estos datos en tu Dashboard)
                     </Typography>
                     <br />
 
-                    <Typography>Name: {doctor.name}</Typography>
+                    <Typography>Nombre: {doctor.name}</Typography>
                     <Typography>
-                      Medical Speciality: {doctor.medicalSpeciality}
+                      Especialidad médica: {doctor.medicalSpeciality}
                     </Typography>
-                    <Typography>
-                      Experience: {doctor.experience} years
+                    <Typography >
+                      Honorarios: {doctor.experience}
                     </Typography>
-                    <Typography>Age: {doctor.age}</Typography>
-                    <Typography>Gender: {doctor.gender}</Typography>
-                    <Typography>Degree: {doctor.degree}</Typography>
+                    <Typography>Edad: {doctor.age}</Typography>
+                    <Typography>Genero: {doctor.gender}</Typography>
+                    <Typography>Titulo: {doctor.degree}</Typography>
                     <Typography>
-                      Address: {doctor.address1}, {doctor.address2},{" "}
+                      Dirección: {doctor.address1}, {doctor.address2},{" "}
                       {doctor.city}, {doctor.state}, {doctor.country},{" "}
                       {doctor.pincode}
                     </Typography>
                     <Typography>
-                      Time Slot :{" "}
+                      Horarios de consulta :{" "}
                       {new Date(doctor.startTime.seconds * 1000).getHours()}:
                       {new Date(doctor.startTime.seconds * 1000).getMinutes()}0
                       - {new Date(doctor.endTime.seconds * 1000).getHours()}:
@@ -73,7 +72,7 @@ const Doctor_Profile = () => {
                       hrs
                     </Typography>
                     <Typography variant="subtitle2">
-                      Last updated at:{" "}
+                      Actualizado por ultima vez: {" "}
                       {new Date(
                         doctor.updatedAt.seconds * 1000
                       ).toLocaleDateString("en-US")}

@@ -29,23 +29,23 @@ const Edit_Details = (props) => {
             return (
               <Grid container spacing={1} key={doctor.uid}>
                 <Grid item xs={12}>
-                  <Title>Your Profile has been verified!</Title>
+                  <Title>¡Tu perfil fue verificado!</Title>
                   <Typography variant="subtitle2" gutterBottom>
-                    (You can still edit your details)
+                    (Todavía podes editar algunos detalles)
                   </Typography>
                 </Grid>
 
                 <Grid item xs={12}>
-                  <Typography>Name: {doctor.name}</Typography>
+                  <Typography>Nombre completo: {doctor.name}</Typography>
                 </Grid>
 
                 <Grid item xs={12}>
-                  <Typography>Gender: {doctor.gender}</Typography>
+                  <Typography>Género: {doctor.gender}</Typography>
                 </Grid>
 
                 <Grid item xs={12}>
                   <Typography>
-                    Medical Speciality: {doctor.medicalSpeciality}
+                    Especialidad médica: {doctor.medicalSpeciality}
                   </Typography>
                 </Grid>
 
@@ -53,7 +53,7 @@ const Edit_Details = (props) => {
                   <Grid container>
                     <Grid item xs={10}>
                       <Typography>
-                        Experience: {doctor.experience} years
+                        Honorarios: {doctor.experience}$
                       </Typography>
                     </Grid>
                     <Grid item xs={2}>
@@ -65,7 +65,7 @@ const Edit_Details = (props) => {
                 <Grid item xs={12}>
                   <Grid container>
                     <Grid item xs={10}>
-                      <Typography>Age: {doctor.age} years</Typography>
+                      <Typography>Edad: {doctor.age} años</Typography>
                     </Grid>
                     <Grid item xs={2}>
                       <Age uid={doctor.uid} />
@@ -76,7 +76,7 @@ const Edit_Details = (props) => {
                 <Grid item xs={12}>
                   <Grid container>
                     <Grid item xs={10}>
-                      <Typography>Degree: {doctor.degree}</Typography>
+                      <Typography>Título: {doctor.degree}</Typography>
                     </Grid>
                     <Grid item xs={2}>
                       <Degree uid={doctor.uid} />
@@ -88,7 +88,7 @@ const Edit_Details = (props) => {
                   <Grid container>
                     <Grid item xs={10}>
                       <Typography>
-                        Address: {doctor.address1}, {doctor.address2},
+                        Dirección: {doctor.address1}, {doctor.address2},
                         <br />
                         {doctor.city}, {doctor.state}, {doctor.country},{" "}
                         {doctor.pincode}
@@ -104,11 +104,11 @@ const Edit_Details = (props) => {
                   <Grid container>
                     <Grid item xs={10}>
                       <Typography>
-                        Time Slot :{" "}
+                        Horario de consulta :{" "}
                         {new Date(doctor.startTime.seconds * 1000).getHours()}:
                         {new Date(doctor.startTime.seconds * 1000).getMinutes()}
-                        0 - {new Date(doctor.endTime.seconds * 1000).getHours()}
-                        :{new Date(doctor.endTime.seconds * 1000).getMinutes()}0
+                         - {new Date(doctor.endTime.seconds * 1000).getHours()}
+                        :{new Date(doctor.endTime.seconds * 1000).getMinutes()}
                         hrs
                       </Typography>
                     </Grid>
@@ -121,7 +121,7 @@ const Edit_Details = (props) => {
                 <br />
                 <Grid item xs={12}>
                   <Typography variant="subtitle2">
-                    Last updated at:
+                    Actualizado por última vez:
                     {new Date(
                       doctor.updatedAt.seconds * 1000
                     ).toLocaleDateString("en-US")}

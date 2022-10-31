@@ -24,7 +24,7 @@ const Form = (props) => {
           if (doctor.isVerified === "false")
             return <Complete_Details uid={props.uid} />;
           else if (doctor.isVerified === "pending")
-            return <Title>Verification is pending by Admin</Title>;
+            return <Title>La verificación está pendiente por un admin</Title>;
           else if (doctor.isVerified === "true")
             return <Edit_Details uid={props.uid} />;
         }

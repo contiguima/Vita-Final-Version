@@ -42,9 +42,9 @@ const View_Doctors = () => {
   return (
     <>
       <Navbar />
-      <Container maxWidth="lg" sx={container}>
+      <Container maxWidth="100%" sx={container}>
         <Typography align="center" variant="h4" sx={typography}>
-          Book Appointment with any Doctor - Click on See More
+          Sacar turno con cualquier doctor de Vita
         </Typography>
 
         {/* SEARCH BAR */}
@@ -52,7 +52,7 @@ const View_Doctors = () => {
           margin="normal"
           fullWidth
           id="search"
-          label="Search by Name/Speciality/City"
+          label="Buscar por Nombre/Ciudad/Especialidad"
           name="search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -112,7 +112,7 @@ const View_Doctors = () => {
                                 {doctor.name} <br />
                                 {doctor.medicalSpeciality} <br />
                                 {doctor.city} <br />
-                                Time Slot :{" "}
+                                Horarios de atención :{" "}
                                 {new Date(
                                   doctor.startTime.seconds * 1000
                                 ).getHours()}
@@ -120,7 +120,7 @@ const View_Doctors = () => {
                                 {new Date(
                                   doctor.startTime.seconds * 1000
                                 ).getMinutes()}
-                                0 -{" "}
+                                 -{" "}
                                 {new Date(
                                   doctor.endTime.seconds * 1000
                                 ).getHours()}
@@ -128,7 +128,7 @@ const View_Doctors = () => {
                                 {new Date(
                                   doctor.endTime.seconds * 1000
                                 ).getMinutes()}
-                                0 hrs
+                                 hrs
                               </Typography>
                             </Grid>
 
@@ -138,7 +138,7 @@ const View_Doctors = () => {
                                 href={`/doctor_profile/${doctor.uid}`}
                                 target="_blank"
                               >
-                                See more
+                                Ver más
                               </Button>
                             </Grid>
                           </Grid>
@@ -151,8 +151,8 @@ const View_Doctors = () => {
               return (
                 <Title>
                   <br />
-                  You first need to complete your details! <br />
-                  Head on to the Dashboard Section.
+                  Primero tenes que completar tus datos <br />
+                  Dirigite a la sección Dashboard
                 </Title>
               );
             }

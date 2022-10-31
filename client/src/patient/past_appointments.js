@@ -42,9 +42,9 @@ const Past_Appointments = () => {
   return (
     <>
       <Navbar />
-      <Container maxWidth="lg" sx={container}>
+      <Container maxWidth="false" sx={container}>
         <Typography variant="h4" align="center" sx={typography}>
-          Past Appointments
+          Turnos Pasados
         </Typography>
         <List>
           {appointments.map((appointment) => {
@@ -57,8 +57,8 @@ const Past_Appointments = () => {
                   <Grid container>
                     <Grid item xs={12} sm={6}>
                       <Typography>
-                        <b>Mode:</b> {appointment.mode} <br />
-                        <b>Slot:</b>{" "}
+                        <b>Modo:</b> {appointment.mode} <br />
+                        <b>Horario:</b>{" "}
                         {new Date(
                           appointment.timeSlot.seconds * 1000
                         ).toLocaleDateString("en-US")}
@@ -71,10 +71,10 @@ const Past_Appointments = () => {
                           appointment.timeSlot.seconds * 1000
                         ).getMinutes()}
                         <br />
-                        <b>Symptoms:</b> {appointment.symptoms}
+                        <b>Síntomas:</b> {appointment.symptoms}
                       </Typography>
                       <Typography>
-                        <b>Prescription: </b>
+                        <b>Prescripción: </b>
                         <Appointments
                           appointmentID={appointment.id}
                           doctorUID={appointment.doctorUID}
@@ -98,7 +98,7 @@ const Past_Appointments = () => {
                         href={`/doctor_profile/${appointment.doctorUID}`}
                         target="_blank"
                       >
-                        See Doctor
+                        Ver profesional
                       </Button>
                     </Grid>
                   </Grid>

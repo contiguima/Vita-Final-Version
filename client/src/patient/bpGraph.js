@@ -45,7 +45,7 @@ const BPGraph = (props) => {
 
   return (
     <React.Fragment>
-      <Title>Blood Sugar Level</Title>
+      <Title>Nivel de azucar en sangre</Title>
       <ResponsiveContainer width="100%">
         <LineChart
           data={data}
@@ -68,7 +68,7 @@ const BPGraph = (props) => {
                 ...theme.typography.body1,
               }}
             >
-              Sugar-Level (mg/dL)
+              Azucar en sangre (mg/dL)
             </Label>
           </YAxis>
           <Tooltip />

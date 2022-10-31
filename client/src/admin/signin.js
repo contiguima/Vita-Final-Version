@@ -52,7 +52,7 @@ const Admin_Signin = () => {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5" sx={{ fontWeight: "bold" }}>
-              Admin Sign in
+              Ingresar como admin
             </Typography>
 
             <Box
@@ -101,11 +101,11 @@ const Admin_Signin = () => {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                Ingresar
               </Button>
             </Box>
             <Typography>
-              Lost credentials? Kindly contact the office.
+              ¨
             </Typography>
           </Box>
         </Grid>

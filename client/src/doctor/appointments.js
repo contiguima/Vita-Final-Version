@@ -67,7 +67,7 @@ const Appointments = () => {
 
     db.collection("patients").doc(patientUID).collection("notifications").add({
       message:
-        "Your appointment has been confirmed! You can check its details in the scheduled meetings section.",
+        "Tu turno se confirmó",
       sentAt: new Date(),
     });
 
@@ -93,11 +93,11 @@ const Appointments = () => {
   return (
     <>
       <Navbar />
-      <Container maxWidth="lg" sx={container}>
+      <Container maxWidth="false" sx={container}>
         <Grid container spacing={3}>
           {/* LIST OF NEW APPOINTMENTS */}
           <Grid item xs={12}>
-            <Title>New Appointments</Title>
+            <Title>Nuevos turnos</Title>
             <Paper sx={paper}>
               <List>
                 {appointments.map((appointment) => {
@@ -110,8 +110,8 @@ const Appointments = () => {
                         <Grid container>
                           <Grid item xs={12} sm={6} md={9}>
                             <Typography>
-                              Mode: {appointment.mode} <br />
-                              Slot:{" "}
+                              Tipo de consulta: {appointment.mode} <br />
+                              Horario:{" "}
                               {new Date(
                                 appointment.timeSlot.seconds * 1000
                               ).toLocaleDateString("en-US")}
@@ -124,7 +124,7 @@ const Appointments = () => {
                                 appointment.timeSlot.seconds * 1000
                               ).getMinutes()}
                               <br />
-                              Symptoms: {appointment.symptoms}
+                              Sintomas: {appointment.symptoms}
                             </Typography>
                           </Grid>
 
@@ -159,7 +159,7 @@ const Appointments = () => {
                                     )
                                   }
                                 >
-                                  Confirm
+                                  Confirmar
                                 </Button>
                               </div>
 
@@ -174,7 +174,7 @@ const Appointments = () => {
                                   )
                                 }
                               >
-                                Cancel
+                                Cancelar
                               </Button>
                             </ButtonGroup>
                           </Grid>
@@ -188,7 +188,7 @@ const Appointments = () => {
 
           {/* LIST OF CONFIRMED APPOINTMENTS */}
           <Grid item xs={12}>
-            <Title>Confirmed Appointments</Title>
+            <Title>Turnos confirmados</Title>
             <Paper sx={paper}>
               <List>
                 {appointments.map((appointment) => {
@@ -201,8 +201,8 @@ const Appointments = () => {
                         <Grid container>
                           <Grid item xs={12} sm={9}>
                             <Typography>
-                              Mode: {appointment.mode} <br />
-                              Slot:{" "}
+                              Tipo de consulta: {appointment.mode} <br />
+                              Horario:{" "}
                               {new Date(
                                 appointment.timeSlot.seconds * 1000
                               ).toLocaleDateString("en-US")}
@@ -215,7 +215,7 @@ const Appointments = () => {
                                 appointment.timeSlot.seconds * 1000
                               ).getMinutes()}
                               <br />
-                              Symptoms: {appointment.symptoms}
+                              Sintomas: {appointment.symptoms}
                             </Typography>
                           </Grid>
                         </Grid>

@@ -50,7 +50,7 @@ const Doctor_Schedule_Meeting = () => {
                     <Grid item xs={12} sm={9}>
                       <Typography>
                         Meeting ID: {meeting.meetingID} <br />
-                        Scheduled At:{" "}
+                        Fecha y horario:{" "}
                         {new Date(
                           meeting.scheduledAt.seconds * 1000
                         ).toLocaleDateString("en-US")}
@@ -72,7 +72,7 @@ const Doctor_Schedule_Meeting = () => {
                         target="_blank"
                         href={`/doctor/room/${meeting.meetingID}`}
                       >
-                        Join
+                        Unirse
                       </Button>
                     </Grid>
                   </Grid>

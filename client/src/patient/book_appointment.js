@@ -54,7 +54,7 @@ const Book_Appointment = (props) => {
         new Date(props.startTime.seconds * 1000).getHours() ||
       timeSlot.getHours() > new Date(props.endTime.seconds * 1000).getHours()
     ) {
-      setTimeError("Please enter time in the time slot of the doctor!");
+      setTimeError("Por favor elegí un horario dentro de los horarios del doctor!");
     }
   };
 
@@ -65,14 +65,14 @@ const Book_Appointment = (props) => {
         new Date(props.startTime.seconds * 1000).getHours() ||
       timeSlot.getHours() > new Date(props.endTime.seconds * 1000).getHours()
     ) {
-      setTimeError("Please enter time in the time slot of the doctor!");
+      setTimeError("Por favor elegí un horario dentro de los horarios del doctor!");
     } else {
       // PUSHING APPOINTMENT DATA IN DB
       db.collection("appointments").add({
         mode: mode,
         timeSlot: timeSlot,
         symptoms: symptoms,
-        isConfirmed: "pending",
+        isConfirmed: "pendiente",
         doctorUID: props.doctorUID,
         patientUID: currentUser.uid,
         bookedAt: new Date(),
@@ -89,7 +89,7 @@ const Book_Appointment = (props) => {
   return (
     <>
       <Button variant="contained" onClick={() => handleClickOpen()}>
-        Book Appointment
+        Sacar turno
       </Button>
       <Dialog
         open={open}
@@ -99,7 +99,7 @@ const Book_Appointment = (props) => {
         aria-describedby="scroll-dialog-description"
         PaperProps={{ sx: { position: "fixed", top: 0, m: 0 } }}
       >
-        <DialogTitle id="scroll-dialog-title">Book Appointment</DialogTitle>
+        <DialogTitle id="scroll-dialog-title">Sacar turno</DialogTitle>
         <form onSubmit={handleSubmit}>
           {timeError && <Alert severity="error">{timeError}</Alert>}
           <DialogContent dividers={scroll === "paper"}>
@@ -115,20 +115,20 @@ const Book_Appointment = (props) => {
                     required
                     id="mode"
                     name="mode"
-                    label="Mode of Consultation"
+                    label="Tipo de consulta"
                     fullWidth
                     size="small"
                     select
                     onChange={(e) => setMode(e.target.value)}
                   >
                     <MenuItem value="Online">Online</MenuItem>
-                    <MenuItem value="Offline">Offline</MenuItem>
+                    <MenuItem value="Offline">En consultorio</MenuItem>
                   </TextField>
                 </Grid>
 
                 {/* DATE AND TIME SLOT */}
                 <Grid item xs={12}>
-                  <Typography>Preferred Date and Time Slot </Typography>
+                  <Typography>Fecha y horario preferidos</Typography>
                 </Grid>
 
                 <Grid item xs={12}>
@@ -158,7 +158,7 @@ const Book_Appointment = (props) => {
                   <TextField
                     id="symptoms"
                     name="symptoms"
-                    label="Symptoms"
+                    label="Sintomas"
                     fullWidth
                     size="small"
                     onChange={(e) => setSymptoms(e.target.value)}
@@ -168,8 +168,8 @@ const Book_Appointment = (props) => {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={() => handleClose()}>Cancel</Button>
-            <Button type="submit">Book</Button>
+            <Button onClick={() => handleClose()}>Cancelar</Button>
+            <Button type="submit">Agendar</Button>
           </DialogActions>
         </form>
       </Dialog>

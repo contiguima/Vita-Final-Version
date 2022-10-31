@@ -31,9 +31,9 @@ const Patient_Notifications = () => {
   return (
     <>
       <Navbar />
-      <Container maxWidth="lg" sx={container}>
+      <Container maxWidth="false" sx={container}>
         <Typography variant="h4" align="center" sx={typography}>
-          Notifications
+          Notificaciones
         </Typography>
         <Button
           variant="contained"
@@ -41,7 +41,7 @@ const Patient_Notifications = () => {
           startIcon={<MarkChatReadIcon />}
           onClick={handleReadNotifications}
         >
-          Mark as read
+          Marcar como leídas
         </Button>
         <List>
           {notifications.map((notification) => {

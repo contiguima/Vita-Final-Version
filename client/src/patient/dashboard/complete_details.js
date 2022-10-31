@@ -180,9 +180,9 @@ const Complete_Details = (props) => {
                 onChange={handleChangeGender}
                 error={genderError}
               >
-                <MenuItem value="Female">Femenino</MenuItem>
-                <MenuItem value="Male">Masculino</MenuItem>
-                <MenuItem value="Other">Otro</MenuItem>
+                <MenuItem value="Femenino">Femenino</MenuItem>
+                <MenuItem value="Masculino">Masculino</MenuItem>
+                <MenuItem value="Otro">Otro</MenuItem>
               </TextField>
             </Grid>
             <Grid item xs={12} sm={6}>

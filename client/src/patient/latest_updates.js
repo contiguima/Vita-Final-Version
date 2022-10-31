@@ -27,12 +27,12 @@ const Patient_Latest_Updates = () => {
   return (
     <>
       <Navbar />
-      <Container maxWidth="lg" sx={container}>
+      <Container maxWidth="false" sx={container}>
         <Grid container>
           <Grid item xs={12}>
             {/* LATEST UPDATES */}
             <Typography variant="h4" align="center" sx={typography}>
-              Latest Updates
+              Ultimas noticias de la Comunidad Vita
             </Typography>
             <Paper sx={transparentPaper}>
               {posts.map((post) => {

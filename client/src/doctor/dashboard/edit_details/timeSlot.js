@@ -15,6 +15,7 @@ import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import TimePicker from "@mui/lab/TimePicker";
 import EditIcon from "@mui/icons-material/Edit";
 
+
 const TimeSlot = (props) => {
   const [open, setOpen] = useState(false);
   const [startTime, setStartTime] = useState(new Date());
@@ -62,16 +63,15 @@ const TimeSlot = (props) => {
       <Dialog
         open={open}
         onClose={handleClose}
-        PaperProps={{ sx: { position: "fixed", top: 0, m: 0 } }}
+        PaperProps={{ sx: { position: "fixed", top: 200, m: 0 } }}
       >
-        <DialogTitle>Edit TimeSlot</DialogTitle>
+        <DialogTitle>Editar horarios</DialogTitle>
         <form onSubmit={handleSubmit}>
           <DialogContent>
             <DialogContentText ref={descriptionElementRef} tabIndex={-1}>
               <Grid container spacing={1}>
                 {/* EDIT START TIME */}
                 <Grid item xs={12} sm={6}>
-                  <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <TimePicker
                       label="Start-Time"
                       value={startTime}
@@ -89,12 +89,13 @@ const TimeSlot = (props) => {
                         />
                       )}
                     />
-                  </LocalizationProvider>
+                  
                 </Grid>
-
+                
                 {/* EDIT END TIME */}
+                
                 <Grid item xs={12} sm={6}>
-                  <LocalizationProvider dateAdapter={AdapterDateFns}>
+                  
                     <TimePicker
                       label="End-Time"
                       value={endTime}
@@ -112,14 +113,14 @@ const TimeSlot = (props) => {
                         />
                       )}
                     />
-                  </LocalizationProvider>
+                 
                 </Grid>
               </Grid>
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose}>Cancel</Button>
-            <Button type="submit">Edit</Button>
+            <Button onClick={handleClose}>Cancelar</Button>
+            <Button type="submit">Editar</Button>
           </DialogActions>
         </form>
       </Dialog>

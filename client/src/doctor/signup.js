@@ -221,7 +221,7 @@ const Doctor_Signup = () => {
                     id="cpassword"
                     autoComplete="confirm-password"
                     value={cpassword}
-                    // type="password"
+                    type="password"
                     onChange={(e) => setCPassword(e.target.value)}
                   />
                 </Grid>
@@ -251,7 +251,7 @@ const Doctor_Signup = () => {
                 <Button
                   variant="outline"
                   fullWidth
-                  // variant="contained"
+                  variant="contained"
                   sx={{ mt: 1, mb: 2 }}
                   startIcon={<GoogleIcon />}
                   onClick={() => signInWithGoogle()}

@@ -314,41 +314,6 @@ const Complete_Details = (props) => {
             
             {/* EDIT START TIME */}
             <Grid item xs={12} sm={6}>
-              
-                    <TextField
-                      required
-                      id="StartTime"
-                      name="StartTime"
-                      label="Start-Time"
-                      type="time"
-                      fullWidth
-                      size="small"
-                    
-                      onChange={(e) => setStartTime(e.target.value)}
-                    />
-                 
-            </Grid>
-             {/* EDIT END TIME */}
-             <Grid item xs={12} sm={6}>
-              
-              <TextField
-                required
-                id="EndTime"
-                name="EndTime"
-                label="End-Time"
-                type="time"
-                fullWidth
-                size="small"
-              
-                onChange={(e) => setStartTime(e.target.value)}
-              />
-           
-      </Grid>
-
-
-
-            
-            {/* <Grid item xs={12} sm={6}>
               <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <TimePicker
                   label="Start-Time"
@@ -368,10 +333,10 @@ const Complete_Details = (props) => {
                   )}
                 />
               </LocalizationProvider>
-            </Grid> */}
+            </Grid>
 
             {/* EDIT END TIME */}
-            {/* <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6}>
               <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <TimePicker
                   label="End-Time"
@@ -391,7 +356,7 @@ const Complete_Details = (props) => {
                   )}
                 />
               </LocalizationProvider>
-            </Grid> */}
+            </Grid>
             <Grid item xs={12}>
               <Button type="submit" variant="contained">
                 Actualizar

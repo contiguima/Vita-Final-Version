@@ -15,7 +15,6 @@ import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import TimePicker from "@mui/lab/TimePicker";
 import EditIcon from "@mui/icons-material/Edit";
 
-
 const TimeSlot = (props) => {
   const [open, setOpen] = useState(false);
   const [startTime, setStartTime] = useState(new Date());
@@ -72,6 +71,7 @@ const TimeSlot = (props) => {
               <Grid container spacing={1}>
                 {/* EDIT START TIME */}
                 <Grid item xs={12} sm={6}>
+                  <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <TimePicker
                       label="Start-Time"
                       value={startTime}
@@ -89,13 +89,12 @@ const TimeSlot = (props) => {
                         />
                       )}
                     />
-                  
+                  </LocalizationProvider>
                 </Grid>
-                
+
                 {/* EDIT END TIME */}
-                
                 <Grid item xs={12} sm={6}>
-                  
+                  <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <TimePicker
                       label="End-Time"
                       value={endTime}
@@ -113,7 +112,7 @@ const TimeSlot = (props) => {
                         />
                       )}
                     />
-                 
+                  </LocalizationProvider>
                 </Grid>
               </Grid>
             </DialogContentText>

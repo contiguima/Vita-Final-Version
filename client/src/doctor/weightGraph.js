@@ -45,7 +45,7 @@ const WeightGraph = (props) => {
 
   return (
     <React.Fragment>
-      <Title>Weight</Title>
+      <Title>Peso</Title>
       <ResponsiveContainer width="100%">
         <LineChart
           data={data}
@@ -68,7 +68,7 @@ const WeightGraph = (props) => {
                 ...theme.typography.body1,
               }}
             >
-              Weight (kg)
+              Peso (kg)
             </Label>
           </YAxis>
           <Tooltip />

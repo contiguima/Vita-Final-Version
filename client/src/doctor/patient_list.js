@@ -40,7 +40,7 @@ const Patient_List = (props) => {
                   href={`/patient_profile/${props.uid}`}
                   target="_blank"
                 >
-                  See Profile
+                  Ver perfil
                 </Button>
               </Grid>
             </Grid>

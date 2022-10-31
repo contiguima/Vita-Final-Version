@@ -56,13 +56,13 @@ const Patient = () => {
                       flexDirection: "column",
                     }}
                   >
-                    <Title>Profile</Title>
-                    <Typography>Name: {patient.name}</Typography>
-                    <Typography>Age: {patient.age}</Typography>
-                    <Typography>Gender: {patient.gender}</Typography>
-                    <Typography>Blood Group: {patient.bloodGroup}</Typography>
+                    <Title>Perfil</Title>
+                    <Typography>Nombre: {patient.name}</Typography>
+                    <Typography>Edad: {patient.age}</Typography>
+                    <Typography>Genero: {patient.gender}</Typography>
+                    <Typography>Grupo Sanguineo: {patient.bloodGroup}</Typography>
                     <Typography>
-                      Address: {patient.address1}, {patient.address2},{" "}
+                      Dirección: {patient.address1}, {patient.address2},{" "}
                       {patient.city}, {patient.state}, {patient.country},{" "}
                       {patient.pincode}
                     </Typography>

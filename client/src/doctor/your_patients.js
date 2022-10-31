@@ -25,9 +25,9 @@ const Your_Patients = () => {
   return (
     <>
       <Navbar />
-      <Container maxWidth="lg" sx={container}>
+      <Container maxWidth="false" sx={container}>
         <Typography variant="h4" align="center" sx={typography}>
-          Your Patients
+          Tus pacientes
         </Typography>
         <List>
           {yourPatients.map((yourPatient) => {

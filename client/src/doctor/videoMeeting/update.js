@@ -69,7 +69,7 @@ const Update = (props) => {
     <div>
       {/* UPDATE BUTTON */}
 
-      <Tooltip title="Update Reports" placement="top">
+      <Tooltip title="Actualizar reportes" placement="top">
         <IconButton onClick={handleClickOpen} style={{ color: "#ffffff" }}>
           <MonitorHeartIcon />
         </IconButton>
@@ -82,7 +82,7 @@ const Update = (props) => {
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
       >
-        <DialogTitle id="form-dialog-title">UPDATE REPORTS</DialogTitle>
+        <DialogTitle id="form-dialog-title">ACTUALIZAR REPORTES</DialogTitle>
         <Divider />
         <DialogContent>
           {/* FORM TO UPDATE REPORTS */}
@@ -93,9 +93,9 @@ const Update = (props) => {
                 <TextField
                   id="outlined"
                   required
-                  label="Blood-Sugar-Level (mg/dL)"
+                  label="Azucar en Sangre (mg/dL)"
                   color="primary"
-                  placeholder="Blood Sugar Level (mg/dL)"
+                  placeholder="Azucar en Sangre (mg/dL))"
                   value={sugarLevel}
                   onChange={(e) => {
                     setSugarLevel(e.target.value);
@@ -107,9 +107,9 @@ const Update = (props) => {
                 <TextField
                   id="outlined"
                   required
-                  label="Weight"
+                  label="Peso"
                   color="primary"
-                  placeholder="Weight (kg)"
+                  placeholder="Peso (kg)"
                   value={weight}
                   onChange={(e) => {
                     setWeight(e.target.value);
@@ -119,7 +119,7 @@ const Update = (props) => {
 
               <Grid item xs={12}>
                 <Button type="submit" startIcon={<SendIcon />}>
-                  Update
+                  Actualizar
                 </Button>
               </Grid>
             </Grid>
@@ -127,7 +127,7 @@ const Update = (props) => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            Close
+            Cerrar
           </Button>
         </DialogActions>
       </Dialog>

@@ -27,12 +27,13 @@ const Doctor_Latest_Updates = () => {
   return (
     <>
       <Navbar />
-      <Container maxWidth="lg" sx={container}>
+      <Container maxWidth="90%" sx={container}>
         <Grid container>
           <Grid item xs={12}>
             {/* LATEST UPDATES */}
-            <Typography variant="h4" align="center" sx={typography}>
-              Latest Updates
+            <Typography variant="h4" align="center" sx={typography} 
+            style={{color: "blue", paddingTop:"5px", fontFamily:"Montserrat"}}>
+              Últimas Novedades
             </Typography>
             <Paper sx={transparentPaper}>
               {posts.map((post) => {

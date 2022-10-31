@@ -85,7 +85,7 @@ const Appointments = () => {
     });
 
     db.collection("patients").doc(patientUID).collection("notifications").add({
-      message: "Your appointment has been cancelled!",
+      message: "Tu turno fue cancelado",
       sentAt: new Date(),
     });
   };

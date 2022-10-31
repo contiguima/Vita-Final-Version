@@ -21,7 +21,7 @@ const Past_Appointments = (props) => {
 
   return (
     <>
-      <Title>Past Appointments</Title>
+      <Title>Turnos Pasados</Title>
       <List>
         {appointments.map((appointment) => {
           if (
@@ -34,8 +34,8 @@ const Past_Appointments = (props) => {
                 <Grid container>
                   <Grid item xs={12} sm={6}>
                     <Typography>
-                      <b>Mode:</b> {appointment.mode} <br />
-                      <b>Slot:</b>{" "}
+                      <b>Tipo de consulta:</b> {appointment.mode} <br />
+                      <b>Fecha y horario:</b>{" "}
                       {new Date(
                         appointment.timeSlot.seconds * 1000
                       ).toLocaleDateString("en-US")}
@@ -46,13 +46,13 @@ const Past_Appointments = (props) => {
                         appointment.timeSlot.seconds * 1000
                       ).getMinutes()}
                       <br />
-                      <b>Symptoms:</b> {appointment.symptoms}
+                      <b>Sintomas:</b> {appointment.symptoms}
                     </Typography>
                   </Grid>
 
                   <Grid item xs={12} sm={6}>
                     <Typography>
-                      <b>Prescription: </b>
+                      <b>Prescripción: </b>
                       <Appointments
                         appointmentID={appointment.id}
                         doctorUID={appointment.doctorUID}

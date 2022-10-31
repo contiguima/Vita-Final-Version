@@ -30,6 +30,8 @@ import DateRangeIcon from "@mui/icons-material/DateRange";
 import VideocamIcon from "@mui/icons-material/Videocam";
 import NewspaperIcon from "@mui/icons-material/Newspaper";
 import LogoutIcon from "@mui/icons-material/Logout";
+import PostAddIcon from "@mui/icons-material/PostAdd";
+
 
 const Navbar = () => {
   const history = useHistory();
@@ -160,6 +162,17 @@ const Navbar = () => {
             </Tooltip>
             <ListItemText>Últimas novedades</ListItemText>
           </ListItem>
+
+          {/* CREATE POST */}
+          <ListItem button component="a" href="/create_post">
+            <Tooltip title="Crear noticia" placement="right">
+              <ListItemIcon>
+                <PostAddIcon />
+              </ListItemIcon>
+            </Tooltip>
+            <ListItemText>Crear Noticia</ListItemText>
+          </ListItem>
+
 
           {/* SIGN OUT */}
           <ListItem button onClick={handleSignout}>

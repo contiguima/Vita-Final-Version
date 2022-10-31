@@ -66,9 +66,9 @@ const Doctor_Profile = () => {
                     <Typography>
                       Horarios de consulta :{" "}
                       {new Date(doctor.startTime.seconds * 1000).getHours()}:
-                      {new Date(doctor.startTime.seconds * 1000).getMinutes()}0
+                      {new Date(doctor.startTime.seconds * 1000).getMinutes()}
                       - {new Date(doctor.endTime.seconds * 1000).getHours()}:
-                      {new Date(doctor.endTime.seconds * 1000).getMinutes()}0
+                      {new Date(doctor.endTime.seconds * 1000).getMinutes()}
                       hrs
                     </Typography>
                     <Typography variant="subtitle2">

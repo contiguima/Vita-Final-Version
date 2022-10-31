@@ -116,7 +116,7 @@ const Chat = (props) => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            Close
+            Cerrar
           </Button>
         </DialogActions>
       </Dialog>

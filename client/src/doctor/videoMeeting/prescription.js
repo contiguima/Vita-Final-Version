@@ -118,19 +118,19 @@ const Prescription = (props) => {
     var j = 120;
     doc.setFontSize("15");
     doc.addImage("/images/logovita.jpg", "JPG", 5, 5, 20, 15);
-    doc.text("Date: ", 20, 30);
+    doc.text("Fecha: ", 20, 30);
     doc.text(date, 50, 30);
     doc.text("Doctor: ", 20, 40);
     doc.text(doctorName, 50, 40);
-    doc.text("Medical Speciality: ", 20, 50);
+    doc.text("Especialidad: ", 20, 50);
     doc.text(doctorSpeciality, 70, 50);
-    doc.text("Patient: ", 20, 70);
+    doc.text("Paciente ", 20, 70);
     doc.text(patientName, 50, 70);
-    doc.text("Age: ", 20, 80);
+    doc.text("Edad: ", 20, 80);
     doc.text(patientAge, 50, 80);
-    doc.text("Gender: ", 20, 90);
+    doc.text("Genero: ", 20, 90);
     doc.text(patientGender, 50, 90);
-    doc.text("Prescription: ", 20, 110);
+    doc.text("Prescripcion: ", 20, 110);
     prescriptions.map((prescript) => {
       doc.text(prescript.prescription, i, j);
       j = j + 10;
@@ -142,7 +142,7 @@ const Prescription = (props) => {
     <div>
       {/* PRESCRIPTION BUTTON */}
 
-      <Tooltip title="Prescription" placement="top">
+      <Tooltip title="Prescripción" placement="top">
         <IconButton onClick={handleClickOpen} style={{ color: "#ffffff" }}>
           <MedicationIcon />
         </IconButton>
@@ -155,7 +155,7 @@ const Prescription = (props) => {
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
       >
-        <DialogTitle id="form-dialog-title">PRESCRIPTION</DialogTitle>
+        <DialogTitle id="form-dialog-title">PRESCRIPCIÓN</DialogTitle>
         <Divider />
         <DialogContent>
           <DialogContentText>
@@ -184,9 +184,9 @@ const Prescription = (props) => {
             <TextField
               id="outlined"
               required
-              label="Prescription"
+              label="Prescripción"
               color="primary"
-              placeholder="Enter prescription..."
+              placeholder="Ingrese la prescripción..."
               value={prescription}
               onChange={(e) => {
                 setPrescription(e.target.value);
@@ -205,10 +205,10 @@ const Prescription = (props) => {
             }}
             startIcon={<DownloadIcon />}
           >
-            Download Prescription
+            Descargar prescripción
           </Button>
           <Button onClick={handleClose} color="primary">
-            Close
+            Cerrar
           </Button>
         </DialogActions>
       </Dialog>

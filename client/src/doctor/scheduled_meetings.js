@@ -37,7 +37,7 @@ const Doctor_Schedule_Meeting = () => {
   return (
     <>
       <Navbar />
-      <Container maxWidth="lg" sx={container}>
+      <Container maxWidth="false" sx={container}>
         <Button onClick={create} variant="contained" target="_blank">
           Meet
         </Button>

@@ -7,7 +7,7 @@ const View_Profile = (props) => {
     <div>
       {/* VIEW PATIENT PROFILE BUTTON */}
 
-      <Tooltip title="View Patient Profile" placement="top">
+      <Tooltip title="Ver perfil del paciente" placement="top">
         <IconButton
           target="_blank"
           href={`/patient_profile/${props.patientUID}`}

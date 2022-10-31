@@ -18,6 +18,7 @@ import Doctor_Notifications from "./doctor/doctor_notifications";
 import Doctor_Room from "./doctor/videoMeeting/room";
 import Your_Patients from "./doctor/your_patients";
 import Doctor_Latest_Updates from "./doctor/latest_updates";
+import Create_PostD from "./doctor/create_post";
 // PATIENT'S PAGES
 import Patient_Signup from "./patient/signup";
 import Patient_Signin from "./patient/signin";
@@ -116,6 +117,10 @@ const App = () => {
                     path="/doctor/latest_updates"
                     component={Doctor_Latest_Updates}
                   />
+                   <Route 
+                   exact 
+                   path="/create_post" 
+                   component={Create_PostD} />
 
                   {/* PATIENT ROUTES */}
                   <Route

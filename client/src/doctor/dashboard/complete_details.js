@@ -8,9 +8,9 @@ import {
   MenuItem,
   Typography,
 } from "@mui/material";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import TimePicker from "@mui/lab/TimePicker";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import { db } from "../../firebase";
 import Title from "./title";
 
@@ -316,7 +316,7 @@ const Complete_Details = (props) => {
             <Grid item xs={12} sm={6}>
               <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <TimePicker
-                  label="Start-Time"
+                  label="Horario de entrada"
                   value={startTime}
                   onChange={handleStartTimeChange}
                   renderInput={(params) => (
@@ -339,7 +339,7 @@ const Complete_Details = (props) => {
             <Grid item xs={12} sm={6}>
               <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <TimePicker
-                  label="End-Time"
+                  label="Horario de salida"
                   value={endTime}
                   onChange={handleEndTimeChange}
                   renderInput={(params) => (

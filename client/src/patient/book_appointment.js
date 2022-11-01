@@ -14,10 +14,11 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import DesktopDateTimePicker from "@mui/lab/DesktopDateTimePicker";
-
+// import AdapterDateFns from "@mui/lab/AdapterDateFns";
+// import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import {DesktopDateTimePicker} from "@mui/x-date-pickers/DesktopDateTimePicker";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 const Book_Appointment = (props) => {
   const [open, setOpen] = useState(false);
   const [scroll, setScroll] = useState("");
@@ -72,7 +73,7 @@ const Book_Appointment = (props) => {
         mode: mode,
         timeSlot: timeSlot,
         symptoms: symptoms,
-        isConfirmed: "pendiente",
+        isConfirmed: "pending",
         doctorUID: props.doctorUID,
         patientUID: currentUser.uid,
         bookedAt: new Date(),

@@ -10,9 +10,12 @@ import {
   Grid,
   TextField,
 } from "@mui/material";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import TimePicker from "@mui/lab/TimePicker";
+// import AdapterDateFns from "@mui/lab/AdapterDateFns";
+// // import LocalizationProvider from "@mui/lab/LocalizationProvider";
+// import TimePicker from "@mui/lab/TimePicker";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import EditIcon from "@mui/icons-material/Edit";
 
 const TimeSlot = (props) => {
@@ -73,7 +76,7 @@ const TimeSlot = (props) => {
                 <Grid item xs={12} sm={6}>
                   <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <TimePicker
-                      label="Start-Time"
+                      label="Horario de entrada"
                       value={startTime}
                       onChange={handleStartTimeChange}
                       renderInput={(params) => (
@@ -81,7 +84,7 @@ const TimeSlot = (props) => {
                           required
                           id="StartTime"
                           name="StartTime"
-                          label="Start-Time"
+                          label="Horario de entrada"
                           fullWidth
                           size="small"
                           {...params}
@@ -96,7 +99,7 @@ const TimeSlot = (props) => {
                 <Grid item xs={12} sm={6}>
                   <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <TimePicker
-                      label="End-Time"
+                      label="Horario de salida"
                       value={endTime}
                       onChange={handleEndTimeChange}
                       renderInput={(params) => (
@@ -104,7 +107,7 @@ const TimeSlot = (props) => {
                           required
                           id="EndTime"
                           name="EndTime"
-                          label="End-Time"
+                          label="Horario de salida"
                           fullWidth
                           size="small"
                           {...params}

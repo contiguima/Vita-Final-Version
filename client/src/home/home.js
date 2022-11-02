@@ -9,8 +9,8 @@ import Footer from "./footer";
 
 
 const sections = [
-  { title: "Home", url: "#" },
-  { title: "Acerca de", url: "#acercade" },
+  { title: "Home", url: "/" },
+  { title: "Acerca de", url: "#/" },
   { title: "Registrarse", url: "/registrarse" },
   
 ];
@@ -28,6 +28,9 @@ const Home = () => {
         <main>
           {/* HEADER COMPONENT - image with tagline*/}
           <Header />
+
+
+          {/* Publicidades */}
           <img
           style={{ display: "flex" , height: "100%", width:"100%"}}
           src={process.env.PUBLIC_URL + "images/promos2.png"}

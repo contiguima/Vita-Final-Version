@@ -124,6 +124,8 @@ const Book_Appointment = (props) => {
                   >
                     <MenuItem value="Online">Online</MenuItem>
                     <MenuItem value="Offline">En consultorio</MenuItem>
+                    <MenuItem value="mensaje">Enviar mensaje</MenuItem>
+
                   </TextField>
                 </Grid>
 
@@ -165,6 +167,32 @@ const Book_Appointment = (props) => {
                     onChange={(e) => setSymptoms(e.target.value)}
                   />
                 </Grid>
+                 {/* Pago */}
+                <Grid item xs={12}>
+                  <TextField
+                    
+                    
+                    label="Método de pago"
+                    fullWidth
+                    size="small"
+                    select
+                    
+                  />
+                  <MenuItem>Débito</MenuItem>
+                    <MenuItem>Crédito</MenuItem>
+                    <MenuItem>Mercado Pago</MenuItem>
+                    <MenuItem>De Pay</MenuItem>
+                </Grid>
+                <Grid item xs={12}>
+                <TextField
+                    label="Número de tarjeta"
+                    fullWidth
+                    size="small"
+                    type= "number"
+                    
+                  />
+                </Grid>
+
               </Grid>
             </DialogContentText>
           </DialogContent>

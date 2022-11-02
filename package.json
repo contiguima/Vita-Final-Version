@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@mui/x-date-pickers": "^5.0.6"
+    "@mui/x-date-pickers": "^5.0.6",
+    "react-swipeable-views": "^0.14.0"
   }
 }

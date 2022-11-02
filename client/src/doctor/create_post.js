@@ -66,7 +66,7 @@ const Create_Post = () => {
       <Navbar />
       <Container maxWidth="false" sx={container}>
         <Typography variant="h4" align="center" sx={typography}>
-          Create Post
+          Crer Noticia
         </Typography>
         <Paper sx={paper}>
           <Grid container spacing={2}>
@@ -75,7 +75,7 @@ const Create_Post = () => {
                 required
                 id="Title"
                 name="Title"
-                label="Title"
+                label="Título"
                 fullWidth
                 size="small"
                 value={title}
@@ -87,7 +87,7 @@ const Create_Post = () => {
                 required
                 id="Body"
                 name="Body"
-                label="Body"
+                label="Cuerpo"
                 fullWidth
                 multiline
                 size="small"

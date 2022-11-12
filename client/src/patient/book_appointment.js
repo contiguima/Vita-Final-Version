@@ -19,6 +19,7 @@ import {
 import {DesktopDateTimePicker} from "@mui/x-date-pickers/DesktopDateTimePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import Stack from '@mui/material/Stack';
 const Book_Appointment = (props) => {
   const [open, setOpen] = useState(false);
   const [scroll, setScroll] = useState("");
@@ -140,7 +141,7 @@ const Book_Appointment = (props) => {
                       value={timeSlot}
                       onChange={(newValue) => {
                         setTimeSlot(newValue);
-                      }}
+                      }} 
                       renderInput={(params) => (
                         <TextField
                           required
@@ -148,14 +149,16 @@ const Book_Appointment = (props) => {
                           name="timeSlot"
                           fullWidth
                           size="small"
+                    
                           onChange={(e) => handleChangeTimeSlot()}
                           {...params}
                         />
                       )}
                     />
+                     
                   </LocalizationProvider>
                 </Grid>
-
+               
                 {/* SYMPTOMS */}
                 <Grid item xs={12}>
                   <TextField

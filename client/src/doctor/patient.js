@@ -9,8 +9,24 @@ import { container, paper, avatar, upload } from "./styles";
 import BPGraph from "./bpGraph";
 import WeightGraph from "./weightGraph";
 import Past_Appointments from "./past_appointments";
+import {
+  IconButton,
+  Button,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Divider,
+  Tooltip,
+} from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
+import MonitorHeartIcon from "@mui/icons-material/MonitorHeart";
 
 const Patient = () => {
+
+  
+  //otras variables
   const [patients, setPatients] = useState([]);
   const { currentUser } = useAuth();
 
@@ -25,6 +41,62 @@ const Patient = () => {
       setPatients(snapshot.docs.map((doc) => doc.data()));
     });
   }, []);
+
+  // VARIABLES PARA SUBIR REPORTES:
+  const [open, setOpen] = useState(false);
+  const [sugarLevel, setSugarLevel] = useState("");
+  const [weight, setWeight] = useState("");
+
+  //FUNCTIONS TO OPEN AND CLOSE DIALOG BOX
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  //SEND PRESCRIPTION FUNCTION
+  const updateReports = (e) => {
+    e.preventDefault();
+
+    //PUSHING BP DATA IN DATABASE
+    patients.map((patient) => {
+    db.collection("patients")
+      .doc(`${patient.uid}`)
+      .collection("bloodSugarLevel")
+      .doc(`3`)
+      .set({
+        sugarLevel: sugarLevel,
+        senderUid: "doctor",
+        senderEmail: currentUser.email,
+        sentAt: new Date(),
+        appointmentID: "1",
+      }); 
+      console.log("Hola");
+   
+      
+
+    //PUSHING BP DATA IN DATABASE
+    db.collection("patients")
+      .doc(`${patient.uid}`)
+      .collection("weight")
+      .doc(`3`)
+      .set({
+        weight: weight,
+        senderUid: "doctor",
+        senderEmail: currentUser.email,
+        sentAt: new Date(),
+        appointmentID: "1",
+      });
+
+    setWeight("");
+    setSugarLevel("");
+  })
+  };
+
+
+
 
   return (
     <>
@@ -43,8 +115,71 @@ const Patient = () => {
                       src={`${patient.imageURL}`}
                       sx={avatar}
                     />
+
+                    <Button onClick={handleClickOpen}>
+        <IconButton  style={{ color: "black" }}>
+          <MonitorHeartIcon />
+        </IconButton> Actualizar reportes
+      </Button>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="form-dialog-title"
+      >
+        <DialogTitle id="form-dialog-title">ACTUALIZAR REPORTES</DialogTitle>
+        <Divider />
+        <DialogContent>
+          {/* FORM TO UPDATE REPORTS */}
+
+          <form onSubmit={updateReports}>
+            <Grid container spacing={1}>
+              <Grid item xs={12}>
+                <TextField
+                  id="outlined"
+                  required
+                  label="Azucar en Sangre (mg/dL)"
+                  color="primary"
+                  placeholder="Azucar en Sangre (mg/dL))"
+                  value={sugarLevel}
+                  onChange={(e) => {
+                    setSugarLevel(e.target.value);
+                  }}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  id="outlined"
+                  required
+                  label="Peso"
+                  color="primary"
+                  placeholder="Peso (kg)"
+                  value={weight}
+                  onChange={(e) => {
+                    setWeight(e.target.value);
+                  }}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <Button type="submit" startIcon={<SendIcon />}>
+                  Actualizar
+                </Button>
+              </Grid>
+            </Grid>
+          </form>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Cerrar
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+                    
                   </Paper>
                 </Grid>
+                
 
                 {/* PATIENT'S PROFILE */}
                 <Grid item xs={12} md={8} lg={9}>
@@ -76,7 +211,7 @@ const Patient = () => {
                       p: 2,
                       display: "flex",
                       flexDirection: "column",
-                      height: 275,
+                      height: 500,
                     }}
                   >
                     <BPGraph uid={patient.uid} />
@@ -89,7 +224,7 @@ const Patient = () => {
                       p: 2,
                       display: "flex",
                       flexDirection: "column",
-                      height: 275,
+                      height: 500,
                     }}
                   >
                     <WeightGraph uid={patient.uid} />

@@ -19,7 +19,7 @@ import {
 import ChatIcon from "@mui/icons-material/Chat";
 import SendIcon from "@mui/icons-material/Send";
 
-const Chat = (props) => {
+const Chat = (props) => { 
   const [open, setOpen] = useState(false);
   const { currentUser } = useAuth();
   const [message, setMessage] = useState("");

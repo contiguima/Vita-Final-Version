@@ -14,8 +14,69 @@ import Book_Appointment from "./book_appointment";
 import { container, paper, typography } from "./styles";
 import Ratings from "../doctor/ratings";
 import Reviews from "../doctor/reviews";
+import {
+  IconButton,
+  TextField,
+  Dialog, 
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  List,
+  ListItem,
+  Divider,
+  Tooltip,
+} from "@mui/material";
+import ChatIcon from "@mui/icons-material/Chat";
+import SendIcon from "@mui/icons-material/Send";
+import { useAuth } from "../contexts/AuthContext";
 
 const Doctor = () => {
+  const { currentUser } = useAuth();
+  const [patients, setPatients] = useState([]);
+
+
+  //CHATS
+  const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState("");
+  const [chats, setChats] = useState([]);
+  //FUNCTIONS TO OPEN AND CLOSE DIALOG BOX
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const sendMessage = (e) => {
+    e.preventDefault();
+
+    //PUSHING MESSAGE IN DATABASE
+    db.collection("meetings")
+      .doc(`1`)
+      .collection("chats")
+      .add({
+        message: message,
+        senderEmail: currentUser.email,
+        senderUid: currentUser.uid,
+        sentAt: new Date(),
+      });
+
+    setMessage("");
+  };
+
+  //FETCHING ALL MESSAGES FROM DATABASE
+  useEffect(() => {
+    db.collection(`meetings/1/chats`)
+      .orderBy("sentAt", "asc")
+      .onSnapshot((snapshot) => {
+        setChats(snapshot.docs.map((doc) => doc.data()));
+      });
+  }, [`1`]);
+
+
+
+
   const [doctors, setDoctors] = useState([]);
   const location = useLocation();
   const uid = location.pathname.substring(
@@ -41,7 +102,7 @@ const Doctor = () => {
                   <Typography align="center" variant="h4" sx={typography}>
                     {doctor.name}
                   </Typography>
-                </Grid>
+                </Grid> 
 
                 {/* AVATAR */}
                 <Grid item xs={12} md={4} lg={3}>
@@ -56,8 +117,66 @@ const Doctor = () => {
                       startTime={doctor.startTime}
                       endTime={doctor.endTime}
                     />
+
+                    {/* MENSAJERIA */}
+                    <Button onClick={handleClickOpen}>
+        <IconButton  style={{ color: "black" }}>
+          <ChatIcon />
+        </IconButton> MENSAJES
+      </Button>
                   </Paper>
                 </Grid>
+
+                 {/* CHAT DIALOG BOX */}
+
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="form-dialog-title"
+      >
+        <DialogTitle id="form-dialog-title">CHAT</DialogTitle>
+        <Divider />
+        <DialogContent>
+          <DialogContentText>
+            <List>
+              {chats.map((chat) => {
+                return (
+                  <>
+                    <ListItem style={{ margin: "0" }}>
+                      <Typography>
+                        {chat.senderEmail}
+                        <p>
+                          <b>{chat.message}</b>
+                        </p>
+                      </Typography>
+                    </ListItem>
+                  </>
+                );
+              })}
+            </List>
+          </DialogContentText>
+
+          {/* FORM TO SEND MESSAGE */}
+
+          <form onSubmit={sendMessage}>
+            <TextField
+              id="filled-basic"
+              color="primary"
+              placeholder="Enter message..."
+              value={message}
+              onChange={(e) => {
+                setMessage(e.target.value);
+              }}
+            />
+            <Button type="submit" startIcon={<SendIcon />} />
+          </form>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Cerrar
+          </Button>
+        </DialogActions>
+      </Dialog>
 
                 {/* PROFILE */}
                 <Grid item xs={12} md={8} lg={9}>

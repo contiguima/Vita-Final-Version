@@ -46,7 +46,7 @@ const Update = (props) => {
         senderEmail: currentUser.email,
         sentAt: new Date(),
         appointmentID: props.meetingID,
-      });
+      }); 
 
     //PUSHING BP DATA IN DATABASE
     db.collection("patients")

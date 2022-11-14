@@ -19,9 +19,13 @@ import {
   DialogTitle,
   Divider,
   Tooltip,
+  DialogContentText,
+  List,
+  ListItem,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import MonitorHeartIcon from "@mui/icons-material/MonitorHeart";
+import ChatIcon from "@mui/icons-material/Chat";
 
 const Patient = () => {
 
@@ -34,6 +38,32 @@ const Patient = () => {
   const uid = location.pathname.substring(
     location.pathname.lastIndexOf("/") + 1
   );
+  //VARIABLES CHAT
+  const [message, setMessage] = useState("");
+  const [chats, setChats] = useState([]);
+  const sendMessage = (e) => {
+    e.preventDefault();
+
+    //PUSHING MESSAGE IN DATABASE
+    db.collection("meetings")
+      .doc(`1`)
+      .collection("chats")
+      .add({
+        message: message,
+        senderEmail: currentUser.email,
+        senderUid: currentUser.uid,
+        sentAt: new Date(),
+      });
+
+    setMessage("");
+  };
+  useEffect(() => {
+    db.collection(`meetings/1/chats`)
+      .orderBy("sentAt", "asc")
+      .onSnapshot((snapshot) => {
+        setChats(snapshot.docs.map((doc) => doc.data()));
+      });
+  }, [`1`]);
 
   // FETCHING PATIENT'S DATA FROM DB
   useEffect(() => {
@@ -55,6 +85,17 @@ const Patient = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const [openMsg, setOpenMsg] = useState(false);
+  
+  const handleClickOpenMsg = () => {
+    setOpenMsg(true);
+  };
+
+  const handleCloseMsg = () => {
+    setOpenMsg(false);
+  };
+
 
   //SEND PRESCRIPTION FUNCTION
   const updateReports = (e) => {
@@ -201,7 +242,67 @@ const Patient = () => {
                       {patient.city}, {patient.state}, {patient.country},{" "}
                       {patient.pincode}
                     </Typography>
+                     {/* CHAT CON EL PACIENTE */}
+
+                     <Button  onClick={handleClickOpenMsg}>
+                    <IconButton style={{ color: "black" }}>
+                      <ChatIcon />
+                    </IconButton> MENSAJES
+                     </Button>
                   </Paper>
+                  {/* CHAT DIALOG BOX */}
+
+      <Dialog
+        open={openMsg}
+        onClose={handleCloseMsg}
+        aria-labelledby="form-dialog-title"
+      >
+        <DialogTitle id="form-dialog-title">CHAT</DialogTitle>
+        <Divider />
+        <DialogContent>
+          <DialogContentText>
+            <List>
+              {chats.map((chat) => {
+                return (
+                  <>
+                    <ListItem style={{ margin: "0" }}>
+                      <Typography>
+                        {chat.senderEmail}
+                        <p>
+                          <b>{chat.message}</b>
+                        </p>
+                      </Typography>
+                    </ListItem>
+                  </>
+                );
+              })}
+            </List>
+          </DialogContentText>
+
+          {/* FORM TO SEND MESSAGE */}
+
+          <form onSubmit={sendMessage}>
+            <TextField
+              id="filled-basic"
+              color="primary"
+              placeholder="Enter message..."
+              value={message}
+              onChange={(e) => {
+                setMessage(e.target.value);
+              }}
+            />
+            <Button type="submit" startIcon={<SendIcon />} />
+          </form>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseMsg} color="primary">
+            Cerrar
+          </Button>
+        </DialogActions>
+      </Dialog>
+                   
+
+
                 </Grid>
 
                 {/* GRAPHS */}
